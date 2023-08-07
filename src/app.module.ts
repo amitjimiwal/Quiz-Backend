@@ -1,12 +1,14 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UserModule } from './user-moduke/user.module';
-import { MoviesModule } from './movies/movies.module';
+import { Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
+import { UserModule } from "./modules/user/user.module";
+import { UserService } from "./modules/user/user.service";
+import { QuizModule } from "./modules/quiz/quiz.module";
+import { QuizService } from "./modules/quiz/quiz.service";
 
 @Module({
-  imports: [UserModule, MoviesModule],
+  imports: [UserModule, QuizModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, UserService, QuizService]
 })
 export class AppModule {}
