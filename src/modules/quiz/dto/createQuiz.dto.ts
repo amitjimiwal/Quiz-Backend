@@ -7,5 +7,5 @@ export class CreateQuiz {
 
   @IsNotEmpty()
   @Length(3)
-  descripttion: string;
+  description: string;
 }
