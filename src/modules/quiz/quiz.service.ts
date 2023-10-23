@@ -12,6 +12,9 @@ export class QuizService {
   getQuiz(): string {
     return "Now this  is from service of quiz";
   }
+  async getQuizByID(id) {
+    return await this.quizRepository.findOne(id);
+  }
   async createnewQuiz(quiz: CreateQuiz) {
     return await this.quizRepository.save(quiz);
   }
